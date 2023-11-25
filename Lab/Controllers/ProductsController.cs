@@ -42,7 +42,7 @@ namespace LAB.Controllers
           {
               return NotFound();
           }
-            return await _context.Products.ToListAsync();
+            return await _context.Products.Where(x=>x.IsActive==true).ToListAsync();
         }
 
         // GET: api/Products/5
